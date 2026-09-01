@@ -108,3 +108,65 @@ In a core banking migration, unmanaged risks can lead to catastrophic system dow
 By maintaining this matrix:
 1. **Critical High Risks (RSK-01, RSK-02)** were targeted with rigorous testing loops, resulting in **zero balance mismatches** during final production deployment.
 2. **Compliance Alignment (RSK-03)** was handled proactively, ensuring the bank received regulatory clearance **48 hours ahead** of the scheduled weekend cutover.
+
+
+
+## PROJECT 2 ##
+#  Mobile Banking App Launch for Microfinance (MFB) Customers
+
+##  Project Overview
+*   **Project Name:** Project Alpha-Wallet: MFB Retail & Micro-Merchant Mobile App Delivery
+*   **Project Manager:** [Olatunji Abeeb]
+*   **Methodology:** Agile Scrum (2-Week Sprints)
+*   **Timeline:** 6 Months
+*   **Target Impact:** Build and deploy a secure, low-bandwidth mobile banking application tailored for 250,000+ unbanked and underbanked micro-merchants to drive financial inclusion, increase cheap savings deposits, and automate low-value transfers.
+
+---
+
+##  The Business Problem & Project Solution
+
+###  Identified Problems
+1.  **High Customer Churn & Access Barriers:** Informal market traders had to abandon their physical market stalls to visit physical MFB branches for simple transfers and cash deposits, causing massive friction.
+2.  **Expensive Cash Handling Costs:** High reliance on cash collections led to major operational expenses, leakage risks, and reconciliation bottlenecks for field staff.
+3.  **Low Engagement with Credit Products:** Without a mobile touchpoint, nano-credit distribution was slow, paper-driven, and highly expensive to administer.
+4.  ### ✅ Project Solutions Delivered
+1.  **Low-Bandwidth Mobile Engine:** Launched an Android/iOS mobile application optimized to perform flawlessly on low-end smartphones and erratic network environments.
+2.  **Self-Service KYC:** Integrated self-service Tier 1 onboarding (BVN/NIN phone verification) to open accounts within 3 minutes without visiting a branch.
+3.  **Micro-Merchant Toolkit:** Engineered specialized wallet infrastructure allowing traders to split personal savings from business inventory capital and accept digital payments directly from clients.
+
+---
+
+##  Miro Board Architecture: Visual Delivery Blueprint
+*Below is the exact schematic map utilized on our team Miro board to track the Product Discovery, Release Plan, and technical component dependencies from initiation to production deployment.*
+
+##  Project Control: Risk Register Matrix
+
+Managing a customer-facing fintech launch requires deep defensive risk mitigation. Below is the proactive risk matrix managed throughout the product life cycle:
+
+###  Risk Scoring Key:
+*   **Probability (1-5):** 1 = Rare, 5 = Almost Certain | **Impact (1-5):** 1 = Negligible, 5 = Catastrophic
+*   **Risk Score:** Probability × Impact (High = 15-25, Medium = 6-12, Low = 1-5)
+
+| Risk ID | Risk Description | Category | Prob | Imp | Score | Proactive Mitigation Strategy (Before) | Reactive Contingency Plan (After) | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **RSK-01** | **App Store Review Rejection:** Apple App Store or Google Play Store rejects the application due to financial compliance policy or bug issues, delaying launch. | Regulatory / External | 3 | 4 | **12 (Med)** | Submit a dummy "Beta" build 4 weeks early to pre-verify account opening logic and security architectures with reviewers. | Shift marketing focus to direct Android APK download distributions via trusted MFB branches while resolving store disputes. | 🟢 Mitigated |
+| **RSK-02** | **Interbank API Instability:** Third-party switching partner experiences heavy downtime, causing interbank fund transfers on the app to fail. | Technical Integration | 4 | 4 | **16 (High)** | Build an independent secondary routing circuit switch with a backup payment gateway partner during Sprint 5. | Automatically toggle traffic to the backup gateway channel if primary API failure rates cross 5% over a 5-minute rolling window. | 🟡 Managed |
+| **RSK-03** | **Low Adoption via High App Size:** Micro-merchants refuse to download the app because the package size consumes too much internal phone memory. | Product Market Fit | 4 | 3 | **12 (Med)** | Enforce strict asset compression policies on engineering teams. Cap the maximum application download footprint at **18 Megabytes (MB)**. | Deploy lightweight, zero-install WebApp variants (PWA) running straight from standard mobile browsers. | 🟢 Mitigated |
+| **RSK-04** | **KYC Database Timeouts:** Central identity validation registries drop connections during peak morning market trading hours. | Operational Risk | 3 | 4 | **12 (Med)** | Implement a caching layer that flags transactions as `PENDING_VERIFICATION` rather than dropping the user session entirely. | Queue offline payloads and execute delayed background retries automatically once connectivity stabilizes. | 🟢 Monitored |
+##  Agile Governance: Sprint 4 Backlog Framework
+*   **Sprint Theme:** Secure Digital Wallet Management & Ledger Sync
+*   **Sprint Goal:** Deliver merchant wallet balance tracking, cross-wallet transfers, and real-time ledger settlement scripts.
+*   **Team Velocity Target:** 42 Story Points (SP)
+
+| Story ID | User Story Description | Priority | Est (SP) | Assigned Track | Definition of Done (DoD) | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **MOB-401** | Merchant Split-Wallet Sub-Account Architecture | 🔥 High | 8 | Backend Core | • Database separates personal/business ledgers.<br>• Data models pass internal concurrency testing loops. | ✅ Done |
+| **MOB-402** | Secure Wallet P2P Internal Money Transfer | 🔥 High | 5 | Frontend & API | • Transfer processes in <1,500ms.<br>• Secure token verification required per call. | ✅ Done |
+| **MOB-403** | Real-Time Push Notification Engine | 🟡 Med | 3 | Middleware | • Users receive credit/debit alerts within 3 seconds.<br>• System falls back to SMS if app is closed. | ✅ Done |
+| **MOB-404** | Ledger Account Balance Audit Checks | 🛡️ Critical | 8 | QA & Compliance | • Zero balance leakage found during automated multi-threaded transfer simulations. | ✅ Done |
+| **MOB-405** | Biometric Authentication Gateway Integration | 🟡 Med | 5 | Security Track | • Fingerprint/FaceID tokens securely lock/unlock app entry points. Passcodes act as alternate backup. | 🏃 In Progress |
+## 📈 Realized Project Outcomes & Business Metrics
+*   **Massive Financial Inclusion:** Onboarded **280,000+ active micro-merchants** within the first 6 months post-launch, outperforming initial project scope by 12%.
+*   **Operational Cost Reduction:** Shifted 64% of manual branch transactions over to the mobile app, dropping physical cash logistics and staffing field costs by **32%**.
+*   **Improved Capital Liquidity:** Driven a 40% growth in low-cost retail savings deposits through the app's automated micro-savings wallet options.
+*   **Sub-Minute Lending Success:** Integrated with the Trader Nano-Credit Engine to process and settle short-term stock loans within **45 seconds** of application.

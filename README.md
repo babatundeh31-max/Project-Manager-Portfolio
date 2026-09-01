@@ -1,4 +1,66 @@
 ## PROJECT 1 ##
+#  Automated KYC & AML Compliance Infrastructure Pipeline
+
+##  Project Overview
+*   **Project Name:** Project Sentinel: End-to-End Automated Compliance & Identity Gating System
+*   **Project Manager:** [Olatunji Abeeb]
+*   **Methodology:** Agile Scrum (2-Week Sprints)
+*   **Timeline:** 6 Months
+*   **Target Impact:** Transition a commercial bank's onboarding infrastructure from slow, manual document collation to an instant, programmatic KYC/AML pipeline. This system connects to national identity registries, tracks real-time PEP (Politically Exposed Persons) status, and scales daily onboarding by 400% while satisfying central bank compliance structures.
+
+---
+
+##  The Business Problem & Project Solution
+
+###  Identified Problems
+1.  **Onboarding Backlogs:** Manual confirmation of customer identity tokens (BVN, NIN, Utility bills) took up to 5 business days per corporate or high-value retail profile.
+2.  **Regulatory Exposure Risk:** Inconsistent manual cross-referencing against global anti-money laundering (AML) blacklists created significant operational risk exposure and audit penalties.
+3.  **High Customer Attrition:** Institutional clients and premium retail accounts abandoned applications due to paper-heavy requirements and long operational wait times.
+
+   
+   ###  Project Solutions Delivered
+1.  **Unified API Gateway Hub:** Engineered a secure, real-time connectivity hub interfacing directly with central registries for instant biometric validation.
+2.  **Automated AML Sanctions Screening:** Integrated a background check mechanism running parallel data queries against global sanctions lists, PEP databases, and fraud blacklists.
+3.  **Smart Document AI Engine:** Deployed an Optical Character Recognition (OCR) validation service that parses uploaded utility documentation and compares it with client records instantly.
+   ##  Project Control: Risk Register Matrix
+
+Operating compliance systems requires absolute control over platform stability, network failure rates, and legal liabilities. Below is the active Risk Register handled dynamically throughout execution:
+
+###  Risk Scoring Key:
+*   **Probability (1-5):** 1 = Rare, 5 = Almost Certain | **Impact (1-5):** 1 = Negligible, 5 = Catastrophic
+*   **Risk Score:** Probability × Impact (High = 15-25, Medium = 6-12, Low = 1-5)
+
+| Risk ID | Risk Description | Category | Prob | Imp | Score | Proactive Mitigation Strategy (Before) | Reactive Contingency Plan (After) | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **RSK-01** | **Registry Connectivity Failures:** Central national identity validation databases encounter server downtime, breaking real-time verification requests. | Technical / External | 4 | 4 | **16 (High)** | Build an advanced background caching and queuing module during Sprint 2. | Place transactions in an automatic retry queue (30-second cycles) and alert operations floor support. | 🟡 Managed |
+| **RSK-02** | **High False-Positive Matches:** Automated AML engine flags common local names too frequently, generating massive backlogs for manual compliance audit queues. | Operational | 3 | 4 | **12 (Med)** | Design advanced fuzzy-matching algorithm logic rules incorporating secondary tokens (Date of Birth + City of Birth) during Sprint 3. | Deploy secondary filter rules to immediately auto-clear profiles holding a confidence index under a 15% threshold. | 🟢 Mitigated |
+| **RSK-03** | **Data Sovereignty Violations:** Cloud database storage frameworks accidentally cache unencrypted personally identifiable information (PII), violating data laws. | Regulatory / Legal | 2 | 5 | **10 (Med)** | Establish hard parameter token masking protocols across all log capture systems; enforce strict database storage encryption at rest. | Immediately invoke data purge scripts, isolate affected server buckets, and notify the Chief Risk Officer for compliance reporting. | 🟢 Mitigated |
+
+
+##  Agile Governance: Sprint 3 Backlog Framework
+*   **Sprint Theme:** Automated AML List Sync & Fuzzy Logic Integration
+*   **Sprint Goal:** Connect to active global sanctions databases and deploy name fuzzy-matching filters to prevent processing restricted profiles.
+*   **Team Velocity Target:** 40 Story Points (SP)
+| Story ID | User Story Description | Priority | Est (SP) | Assigned Track | Definition of Done (DoD) | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **KYC-301** | Sanctions List API Extraction Pipeline | 🔥 High | 8 | Core Engineering | • Daily delta synchronization completes in under 120s.<br>• Data stream encrypted using TLS 1.3 frameworks. | ✅ Done |
+| **KYC-302** | Fuzzy-Matching Name Scoring Engine | 🔥 High | 8 | Backend Core | • Algorithm successfully differentiates variants.<br>• False positive rates drop below a target 3% ceiling. | ✅ Done |
+| **KYC-303** | Compliance Officer PEP Exception Dashboard | 🟡 Med | 5 | Frontend UI | • Interface loads flagged exception records in <800ms.<br>• Manual override log capture functions completely. | ✅ Done |
+| **KYC-304** | End-to-End Encryption Audit Verification | 🛡️ Critical | 13 | DevOps & Sec | • Data masking verified across 100% of pipeline logs.<br>• Penetration check certifies absence of token leaks. | ✅ Done |
+| **KYC-305** | Real-Time Slack/Email Incident Trigger | 🟡 Med | 6 | Middleware | • High-risk PEP match events fire immediate alert payloads directly to compliance desk channels. | 🏃 In Progress |
+##  Realized Project Outcomes & Business Metrics
+*   **Radical Processing Velocity:** Slashed corporate and retail onboarding turnaround cycles from **5 business days to under 30 seconds**.
+*   **Onboarding Scale Achieved:** Elevated daily client account creation volume capacity by **410%** without needing to recruit additional administrative support staff.
+*   **100% Audit Conformance:** Achieved a perfect audit pass score during independent regulatory reviews, certifying complete adherence to all anti-money laundering and data handling frameworks.
+*   **Operational Leakage Minimization:** Prevented high-risk operational entry errors, protecting institutional asset metrics and entirely avoiding central banking processing penalties.
+
+##  Realized Project Outcomes & Business Metrics
+*   **Radical Processing Velocity:** Slashed corporate and retail onboarding turnaround cycles from **5 business days to under 30 seconds**.
+*   **Onboarding Scale Achieved:** Elevated daily client account creation volume capacity by **410%** without needing to recruit additional administrative support staff.
+*   **100% Audit Conformance:** Achieved a perfect audit pass score during independent regulatory reviews, certifying complete adherence to all anti-money laundering and data handling frameworks.
+*   **Operational Leakage Minimization:** Prevented high-risk operational entry errors, protecting institutional asset metrics and entirely avoiding central banking processing penalties.
+
+## PROJECT 2 ##
 
 #  Core Banking System (CBS) Modernization & Migration Project
 
@@ -111,7 +173,7 @@ By maintaining this matrix:
 
 
 
-## PROJECT 2 ##
+## PROJECT 3 ##
 #  Mobile Banking App Launch for Microfinance (MFB) Customers
 
 ##  Project Overview
@@ -134,10 +196,7 @@ By maintaining this matrix:
 2.  **Self-Service KYC:** Integrated self-service Tier 1 onboarding (BVN/NIN phone verification) to open accounts within 3 minutes without visiting a branch.
 3.  **Micro-Merchant Toolkit:** Engineered specialized wallet infrastructure allowing traders to split personal savings from business inventory capital and accept digital payments directly from clients.
 
----
 
-##  Miro Board Architecture: Visual Delivery Blueprint
-*Below is the exact schematic map utilized on our team Miro board to track the Product Discovery, Release Plan, and technical component dependencies from initiation to production deployment.*
 
 ##  Project Control: Risk Register Matrix
 
@@ -165,7 +224,7 @@ Managing a customer-facing fintech launch requires deep defensive risk mitigatio
 | **MOB-403** | Real-Time Push Notification Engine | 🟡 Med | 3 | Middleware | • Users receive credit/debit alerts within 3 seconds.<br>• System falls back to SMS if app is closed. | ✅ Done |
 | **MOB-404** | Ledger Account Balance Audit Checks | 🛡️ Critical | 8 | QA & Compliance | • Zero balance leakage found during automated multi-threaded transfer simulations. | ✅ Done |
 | **MOB-405** | Biometric Authentication Gateway Integration | 🟡 Med | 5 | Security Track | • Fingerprint/FaceID tokens securely lock/unlock app entry points. Passcodes act as alternate backup. | 🏃 In Progress |
-## 📈 Realized Project Outcomes & Business Metrics
+##  Realized Project Outcomes & Business Metrics
 *   **Massive Financial Inclusion:** Onboarded **280,000+ active micro-merchants** within the first 6 months post-launch, outperforming initial project scope by 12%.
 *   **Operational Cost Reduction:** Shifted 64% of manual branch transactions over to the mobile app, dropping physical cash logistics and staffing field costs by **32%**.
 *   **Improved Capital Liquidity:** Driven a 40% growth in low-cost retail savings deposits through the app's automated micro-savings wallet options.

@@ -52,6 +52,37 @@ By maintaining this matrix:
 1. **Critical High Risks (RSK-01, RSK-02)** were targeted with rigorous testing loops, resulting in **zero balance mismatches** during final production deployment.
 2. **Compliance Alignment (RSK-03)** was handled proactively, ensuring the bank received regulatory clearance **48 hours ahead** of the scheduled weekend cutover.
 
+##  Project Artifact: Agile Scrum Governance & Sprint Backlog
+
+To execute this migration without interrupting daily bank operations, the project was managed using 2-week Sprint cycles. Below is the structured governance framework and a sample of the **Sprint 3 Backlog**, which focused entirely on migrating active customer balances and ledger validation.
+
+---
+
+###  Scrum Ceremony Schedule & Governance
+As the Project Manager/Scrum Master, I established and facilitated the following cadences to ensure cross-functional alignment between Engineering, Operations, and Compliance:
+
+*   **Daily Standup (15 mins, Mon-Fri):** Fast-paced synchronization focusing on technical blockers, database schema issues, and api connectivity states.
+*   **Sprint Planning (2 hours, Bi-weekly):** Velocity-based commitment where engineers pull data extraction user stories from the product backlog into the active sprint.
+*   **Sprint Review & Demo (1 hour, Bi-weekly):** Live demonstration of successfully migrated data categories (e.g., matching dry-run test profiles) to the Risk & Compliance Steering Committee for sign-off.
+*   **Sprint Retrospective (1 hour, Bi-weekly):** Deep dive into process improvements, specifically tuning migration scripts to optimize data transfer speeds.
+
+
+###  Sprint 3 Backlog (Theme: Active Balance Ledger Migration)
+*   **Sprint Goal:** Extract, clean, transform, and load 500,000 active savings account ledger records from the legacy database to the cloud infrastructure with zero financial variance.
+*   **Committed Velocity:** 38 Story Points
+  | Story ID | User Story Title | Priority | Estimate (SP) | Assigned Team | Definition of Done (DoD) | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **CBS-301** | Extract Active Savings Balances Payload | 🔥 High | 8 | Core Data Team | • Script extracts 100% of target rows.<br>• Data encrypted at rest via AES-256.<br>• Staged in secure S3 bucket. | ✅ Done |
+| **CBS-302** | Map Legacy Schema to Cloud DB Fields | 🔥 High | 5 | Backend Integration | • Field mapping matches Miro architecture layout.<br>• 0% data type truncation errors.<br>• Approved by Data Architect. | ✅ Done |
+| **CBS-303** | Run Automated Automated Reconciliation Script | 🔥 High | 8 | QA / Internal Audit | • Checksum tool cross-verifies balance tallies.<br>• Balance variance equals exactly `0.00 Kobo`. | ✅ Done |
+| **CBS-304** | Build Automated Rollback Trigger Component | 🛡️ Critical | 13 | DevOps / Infrastructure | • Rollback script executes in under 90 seconds.<br>• Reverts target database to previous stable state if ledger check fails. | ✅ Done |
+| **CBS-305** | Real-Time Transaction Logs Sync Testing | 🟡 Med | 4 | Middleware Team | • Inflight transactions during extraction window are successfully captured in backup logs. | 🏃 In Progress |
+
+
+###  Sprint 3 Velocity & Burndown Insights
+*   **Velocity Tracking:** The team successfully delivered 34 out of 38 committed story points. 
+*   **Blocker Resolved (Mid-Sprint):** A schema mismatch on historical account interest calculation fields threatened to stall **CBS-302**. I pulled an emergency sync with the Third-Party CBS Vendor to acquire the updated API documentation, unblocking the data team within 4 hours and preventing sprint slippage.
+*   **Audit Conformance:** Internal Audit signed off on the automated validation results for **CBS-303**, verifying perfect ledger consistency before closing out the sprint.
 
 ##  Projected Project Outcomes & Impact
 * **Zero Transaction Variance:** Achieved a clean database reconciliation pass with 100% data integrity across 1.5 million active accounts.

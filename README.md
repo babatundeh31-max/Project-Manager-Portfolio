@@ -1,15 +1,13 @@
 ## PROJECT 1 ##
 
-
 #  Automated Credit Evaluation & Real-Time Loan Disbursement System
 
 ##  Project Executive Summary
 *   **Domain:** Retail Banking & Digital Nano-Lending Systems
-*   **Role:** Senior Business Analyst (System Architecture, Rules Engine, and API Integration mapping)
+*   **Role:** Senior Business Analyst 
 *   **Methodology:** Agile Scrum Framework
 *   **System Latency Target:** End-to-end payload processing in **under 2,500 milliseconds (2.5 seconds)**
 *   **Target Impact:** Transition the bank's micro-loan underwriting engine from a manual risk assessment model to a zero-touch, automated backend pipeline. This system processes incoming user payloads via USSD or Mobile API channels, executes instant biometric identity confirmation, queries external credit registers, runs a programmatic credit scoring engine, and handles automated settlement directly inside the Core Banking ledger.
-
 
 ##  The Business Problem & Engineered Solution
 
@@ -18,12 +16,14 @@
 *   **Operational Risk & Fraud Exposure:** Manual validation checks created data collection gaps, leading to a surge in identity theft attempts and a rising Non-Performing Loan (NPL) ratio.
 *   **Downstream API Expense Inflation:** Running deep, expensive credit registry queries before verifying an applicant's basic identity data inflated transaction integration bills by **28%**.
 
-### ✅ The Engineered Solution
+###  The Engineered Solution
 Designed and mapped out a multi-tiered, gated transactional sequence that validates applicant data progressively, acting as an optimal cost and security filter:
 1.  **Identity Gating (Perimeter Check):** Immediate interface with the central bank data registry for real-time Bank Verification Number (BVN) matching.
 2.  **The Decision Diamond Operator:** A backend validation check that terminates corrupted or unverified user strings instantly, completely eliminating downstream third-party API transaction costs.
 3.  **Real-Time Bureau Synchronization:** Automated API data mapping pulls historical transaction files, active external debt balances, and risk scores from external registries.
 4.  **Zero-Touch Execution Rules:** High-scoring applicants (`Score >= 600`) bypass human manual underwriting queues entirely, sending disbursement instructions straight to automated clearings.
+
+---
 
 ##  Core Deliverable: Business Rules & Logic-Gate Matrix
 
@@ -57,7 +57,6 @@ To support rapid delivery within an Agile Scrum development framework, the syste
     *   **Given** the user types an input string that is less than or greater than 11 digits (e.g., 9 characters),
     *   **When** they attempt to click submit,
     *   **Then** the system must block the outbound processing thread, prevent downstream API execution, and print an inline alert: *"BVN field entry must contain exactly 11 numbers."*
-
 ###  US-02: Credit Bureau App Risk Evaluation Gate
 *   **As a** Risk Assessment System Monitor,
 *   **I want the pipeline to** analyze incoming bureau scores programmatically and route sub-prime applicants to an educational loop,
@@ -73,6 +72,8 @@ To support rapid delivery within an Agile Scrum development framework, the syste
     *   **When** the pipeline hits the scoring evaluation gate operator,
     *   **Then** it must terminate the disbursement process, change the session state to `REJECTED_CREDIT`, and trigger an automated SMS containing specific financial health tips and debt management advice.
 
+##  Core Deliverable: Target Field Data Dictionary
+
 To eliminate developer translation errors during database schema design, below is the explicit structural configuration mapping required for incoming system application fields.
 
 | Field Target Variable (JSON Key) | Structural Data Type | Null Allowable (Y/N) | System Validation Constraint Rules | Field Content Definition |
@@ -82,6 +83,10 @@ To eliminate developer translation errors during database schema design, below i
 | `payout_target_amount` | Decimal (18, 2) | **N** | Evaluation threshold constraint: Value must be **> 0.00**. Maximum single processing limit = **500,000.00**. | The currency volume requested for automated clearings and wallet disbursement. |
 | `transaction_status_flag` | String | **N** | Restricted to system enum types: `[INITIATED, KYC_PASSED, CREDIT_REJECT, SYSTEM_DONE]`. | Active state tracking parameter monitoring position within the pipeline hierarchy. |
 | `bureau_score_metric` | Integer | **Y** | Ranges between a low threshold of **300** and a ceiling of **850**. Initial state defaults to `NULL`. | The historical scoring grade extracted from the third-party Credit Bureau App API. |
+
+
+
+   
 
 
 

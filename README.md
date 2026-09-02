@@ -17,7 +17,7 @@
 1.  **Severe Banking Deserts:** Rural and semi-urban communities lacked brick-and-mortar MFB or commercial bank branches, forcing locals to travel hours just to access basic cash liquidity.
 2.  **High Infrastructure CapEx:** Building physical concrete bank branches to capture rural retail savings is financially unsustainable and carries heavy ongoing operational costs.
 3.  **Fragmented Retail Liquidity:** Micro-merchants in these clusters handled cash inefficiently, leaving local market liquidity outside the formal commercial banking ecosystem.
-### ✅ Project Solutions Delivered
+###  Project Solutions Delivered
 1.  **Decentralized Banking Nodes:** Transformed everyday retail stalls (mom-and-pop shops, fuel stations, kiosks) into mini-banking agencies using durable Android POS hardware.
 2.  **Low-Latency Agent Wallet Engine:** Developed a high-speed, secure mobile agent utility application running on the terminal to execute instant interbank card cashouts and token transfers.
 3.  **Automated Commission Settlement Engine:** Built an instantaneous backend split-fee ledger that credits agents, super-agents, and the parent bank their exact revenue margins in real time per transaction.
@@ -119,7 +119,66 @@ Operating compliance systems requires absolute control over platform stability, 
 *   **100% Audit Conformance:** Achieved a perfect audit pass score during independent regulatory reviews, certifying complete adherence to all anti-money laundering and data handling frameworks.
 *   **Operational Leakage Minimization:** Prevented high-risk operational entry errors, protecting institutional asset metrics and entirely avoiding central banking processing penalties.
 
-## PROJECT 3 ##
+
+#  Automated Non-Performing Loan (NPL) Recovery Campaign Platform
+
+##  Project Overview
+*   **Project Name:** Project Phoenix: Predictive Delinquency Management & Automated Collection Engine
+*   **Project Manager:** [Your Name]
+*   **Methodology:** Agile Scrum (2-Week Sprints)
+*   **Timeline:** 4 Months
+*   **Target Impact:** Build and deploy a data-driven, automated recovery platform that monitors past-due micro-loans, applies machine learning to score delinquency risk, and triggers automated, multi-channel recovery workflows. This platform aims to reduce the bank's Non-Performing Loan (NPL) ratio while offering flexible, programmatic restructuring paths for distressed borrowers.
+
+---
+
+##  The Business Problem & Project Solution
+
+###  Identified Problems
+1.  **Surging NPL Ratios:** Rapid expansion of mobile retail micro-loans led to an unsustainable surge in loan defaults, threatening the bank’s capital adequacy ratio.
+2.  **Inefficient Manual Collections:** Physical collection teams wasted hours calling low-risk, slightly delayed accounts instead of focusing on high-risk, chronic defaulters.
+3.  **Rigid Recovery Paths:** Borrowers wanting to pay back lacked a self-service option to restructure their payment schedules into affordable installments, leading to total abandonment.
+###  Project Solutions Delivered
+1.  **Predictive Risk-Scoring Engine:** Developed a backend data pipeline that ingests payment histories and calculates a "Recovery Confidence Score" to prioritize accounts automatically.
+2.  **Omnichannel Cascading Outreach:** Engineered an automated communication trigger system that dynamically dispatches tailored alerts (Push ➡️ SMS ➡️ Interactive Voice Response (IVR) Calls) based on days past due.
+3.  **Self-Service Restructuring Portal:** Launched a web and mobile interface where delinquent borrowers can instantly opt into automated, multi-payment restructuring plans approved by risk compliance rules.
+
+##  Project Control: Risk Register Matrix
+
+When executing collections via automated algorithms, project managers must carefully balance system communication loads, borrower data privacy protections, and regulatory restrictions around credit harassment:
+
+###  Risk Scoring Key:
+*   **Probability (1-5):** 1 = Rare, 5 = Almost Certain | **Impact (1-5):** 1 = Negligible, 5 = Catastrophic
+*   **Risk Score:** Probability × Impact (High = 15-25, Medium = 6-12, Low = 1-5)
+
+| Risk ID | Risk Description | Category | Prob | Imp | Score | Proactive Mitigation Strategy (Before) | Reactive Contingency Plan (After) | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **RSK-01** | **Database Lockups During Query:** Extracting massive delinquency datasets simultaneously from the Core Banking DB degrades live transactional processing performance. | Technical / Performance | 3 | 5 | **15 (High)** | Configure the data integration pipeline to execute queries as a read-only replica *only* during low-traffic overnight windows (2:00 AM - 4:00 AM). | Immediately kill the query process thread, fall back to the previous day's cached data, and scale up memory limits. | 🟢 Mitigated |
+| **RSK-02** | **Regulatory Overreach Penalties:** Automated communication loops repeatedly broadcast notifications outside permissible hours, breaching customer protection regulations. | Compliance / Legal | 3 | 4 | **12 (Med)** | Build systematic time-fences directly into the campaign manager logic engine to block outbound triggers before 8:00 AM and after 6:00 PM. | Automatically freeze the communication gateway queue, purge out-of-bounds payloads, and log an incident report for auditing. | 🟢 Mitigated |
+| **RSK-03** | **Machine Learning Bias Errors:** The scoring engine miscalculates data profiles, accidentally routing reliable, high-probability restructurers into aggressive manual collections. | Data Quality Risk | 2 | 4 | **8 (Med)** | Conduct multi-threaded data simulations during Sprint 2; mandate a human analytical review of the algorithm model variables every two weeks. | Flag disputed accounts as `EXC_MANUAL_HOLD`, pull them out of the automated queue, and reset their parameters manually. | 🟢 Monitored |
+
+
+##  Agile Governance: Sprint 2 Backlog Framework
+*   **Sprint Theme:** Omnichannel Integration & Cascading Outreach Logic Gating
+*   **Sprint Goal:** Secure active hook integrations with Twilio/SMS and IVR service endpoints, and engineer the automated day-based cascading delay triggers.
+*   **Team Velocity Target:** 38 Story Points (SP)
+
+| Story ID | User Story Description | Priority | Est (SP) | Assigned Track | Definition of Done (DoD) | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **NPL-201** | Automated Multi-Channel Campaign Cascade Framework | 🔥 High | 8 | Core Engineering | • System triggers automated SMS on Day 1 and shifts to IVR drops on Day 8 if unpaid. | ✅ Done |
+| **NPL-202** | Twilio SMS API Gateway Integration & Template Lock | 🔥 High | 5 | Messaging Track | • Delivery logs capture text statuses in real time. All templates include dynamic account data fields. | ✅ Done |
+| **NPL-203** | Delinquency Restructuring Deep Link Generator Component | 🔥 High | 8 | Backend Core | • Programmatic script successfully outputs personalized, secure payment modification web tokens. | ✅ Done |
+| **NPL-204** | Outbound Call Compliance Window Time-Fence Script | 🛡️ Critical | 11 | DevOps & QA | • Time-gate rules block communications outside standard hours with 100% processing precision. | ✅ Done |
+| **NPL-205** | Real-Time Telephony Provider Balance Monitor | 🟡 Med | 6 | Cloud Infrastructure| • App monitors external API balances and fires warning triggers if credit limits fall past 15%. | 🏃 In Progress |
+
+##  Realized Project Outcomes & Business Metrics
+*   **Measurable NPL Ratio Reduction:** Successfully drove down the bank’s micro-loan portfolios' Non-Performing Loan ratio by **18.5%** within 90 days of system activation.
+*   **Reduced Operational Overhead Costs:** Maximized human efficiency by shifting 72% of early-stage collections to automated communication modules, decreasing team costs by **35%**.
+*   **High Self-Service Adoption Rate:** Enabled **$1.1M+ in outstanding loan commitments** to be successfully restructured through digital web interfaces without needing a physical loan officer.
+*   **Excellent Processing Pipeline Uptime:** Maintained an operational data ingestion and campaign dispatch processing stability rate of **99.9%** across all scheduled runs.
+
+
+   
+## PROJECT 4 ##
 
 #  Core Banking System (CBS) Modernization & Migration Project
 
@@ -232,7 +291,7 @@ By maintaining this matrix:
 
 
 
-## PROJECT 4 ##
+## PROJECT 5 ##
 #  Mobile Banking App Launch for Microfinance (MFB) Customers
 
 ##  Project Overview

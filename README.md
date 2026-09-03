@@ -265,7 +265,7 @@ By maintaining this matrix:
 *   **Project Manager:** [Olatunji Abeeb]
 *   **Methodology:** Hybrid (Waterfall for Swift MT-to-MX financial field testing; Agile Scrum for treasury routing software)
 *   **Timeline:** 8 Months
-*   **Target Impact:** Upgrade the commercial bank’s legacy international payment infrastructure to support the new global ISO 20022 (XML-based) financial messaging standard. This project opens high-value, real-time cross-border trade settlements, automates multi-currency treasury positioning, and integrates anti-money laundering parsing engines directly into active settlement flows.
+*   **Target Impact:** Upgrade the commercial bank’s legacy international payment infrastructure to support the new global ISO 2026 (XML-based) financial messaging standard. This project opens high-value, real-time cross-border trade settlements, automates multi-currency treasury positioning, and integrates anti-money laundering parsing engines directly into active settlement flows.
 
 ---
 
@@ -285,7 +285,7 @@ By maintaining this matrix:
 3.  **High Payment Settlement Failure Rates:** Errored formatting inside corporate international wire payment forms resulted in high transaction rejection metrics and degraded business client satisfaction.
 
 ###  Project Solutions Delivered
-1.  **ISO 20022 MX Translation Engine:** Developed an enterprise middleware layer that parses rich XML financial payloads, preventing data loss and speeding up international routing.
+1.  **Ios 2026 MX Translation Engine:** Developed an enterprise middleware layer that parses rich XML financial payloads, preventing data loss and speeding up international routing.
 2.  **Real-Time Liquidity Dashboard:** Built an automated treasury engine tracking localized liquidity pools across correspondent networks, automating intraday fund placements.
 3.  **Smart Validation UX Framework:** Deployed a structured, upfront compliance validation layer for corporate banking portals to stop formatting errors before messages ever hit processing switches.
 

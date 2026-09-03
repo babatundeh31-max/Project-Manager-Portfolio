@@ -258,7 +258,7 @@ By maintaining this matrix:
 
 ## PROJECT 5 ##
 
-#  Enterprise Treasury Modernization & IOS 20026 Cross-Border Payment Gateway
+#  Enterprise Treasury Modernization & IOS 2026 Cross-Border Payment Gateway
 
 ##  Project Overview
 *   **Project Name:** Project GlobalConnect: SWIFT MX Enterprise Payment Modernization

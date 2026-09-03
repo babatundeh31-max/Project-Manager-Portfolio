@@ -267,15 +267,6 @@ By maintaining this matrix:
 *   **Timeline:** 8 Months
 *   **Target Impact:** Upgrade the commercial bank’s legacy international payment infrastructure to support the new global ISO 2026 (XML-based) financial messaging standard. This project opens high-value, real-time cross-border trade settlements, automates multi-currency treasury positioning, and integrates anti-money laundering parsing engines directly into active settlement flows.
 
----
-
-##  The Business Problem & Project Solution
-
-###  Identified Problems
-1.  **Legacy Message Truncation (SWIFT MT):** The older financial messaging framework lacked the structured data fields required for modern compliance, causing high operational overhead and transactions getting flagged or delayed at clearing hubs.
-2.  **Manual Treasury Reconciliation:** The Treasury Desk manually updated multi-currency cash positioning charts across global correspondent accounts, leading to high currency risk and fragmented liquidity mapping.
-3.  **High Payment Settlement Failure Rates:** Errored formatting inside corporate international wire payment forms resulted in high transaction rejection metrics and degraded business client satisfaction.
-
 
 ##  The Business Problem & Project Solution
 
